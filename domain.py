@@ -1,6 +1,8 @@
 import sys
-sys.path.append("/Users/jadezhang/Documents/2016fall/new_insight_project/app_GUI")
-import yelp_api as ya
+sys.path.append("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
+
+
+import yelp_attraction_search as ya
 import googlemaps
 from datetime import datetime
 import route_generating as rg
@@ -8,8 +10,8 @@ import route_generating as rg
 gmaps = googlemaps.Client(key='AIzaSyDR5O0GRTeZn9Y1vW3ypD3aaIBSlmmJht4')
 
 # *********the user selects city, starting/ending points and the number of attractions to show**********
-city = "San Francisco"
-start = "SFO"
+#city = "San Francisco"
+start = "San Francisco" #consider concatenating the name of the city and state
 end = start
 nlist = 20
 
@@ -50,6 +52,7 @@ for i in attraction_selection:
     coord = ya.get_coord(attraction_locations[attractions[i]])
     rt_params = ya.get_para_dining(coord[0],coord[1],dining_pref,radius)
     restaurant = ya.get_results(rt_params)['businesses']
+    #for each attraction, select the the top 3 (or all available) restaurants within the specified radius
     for j in range(min(3,len(restaurant))):
         business = restaurant[j]
         name = str(business['name'])

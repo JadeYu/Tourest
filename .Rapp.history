@@ -1,0 +1,559 @@
+xs
+y2s <- y2[(y2>10^(-5))&(xseq<inter)]
+for(i in 1:length(xs)){#
+		lines(c(xs[i],xs[i]),c(0,y2s[i]))#
+	}
+xs <- xseq[(y1>10^(-5))&(xseq<inter)]#
+	y1s <- y1[(y1>10^(-5))&(xseq<inter)]#
+	for(i in 1:length(xs)){#
+		lines(c(xs[i],xs[i]),c(0,y1s[i]))#
+	}
+overlap_shade <- function(y1,y2,xseq){#
+	inter <- xseq[sum(y1>y2)]#
+	xs <- xseq[(y2>10^(-5))&(xseq<inter)]#
+	y2s <- y2[(y2>10^(-5))&(xseq<inter)]#
+	for(i in 1:length(xs)){#
+		lines(c(xs[i],xs[i]),c(0,y2s[i]))#
+	}#
+	xs <- xseq[(y1>10^(-5))&(xseq>inter)]#
+	y1s <- y1[(y1>10^(-5))&(xseq>inter)]#
+	for(i in 1:length(xs)){#
+		lines(c(xs[i],xs[i]),c(0,y1s[i]))#
+	}#
+}
+overlap_shade(y1,y2,xseq)
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency")#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,12,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,17,2)#
+lines(xseq,y4)
+overlap_shade(y1,y2,xseq)
+overlap_shade <- function(y1,y2,xseq){#
+	inter <- xseq[sum(y1>y2)]#
+	xs <- xseq[(y2>10^(-5))&(xseq<inter)]#
+	y2s <- y2[(y2>10^(-5))&(xseq<inter)]#
+	for(i in 1:length(xs)){#
+		lines(c(xs[i],xs[i]),c(0,y2s[i]))#
+	}#
+	xs <- xseq[(y1>10^(-5))&(xseq>=inter)]#
+	y1s <- y1[(y1>10^(-5))&(xseq>=inter)]#
+	for(i in 1:length(xs)){#
+		lines(c(xs[i],xs[i]),c(0,y1s[i]))#
+	}#
+}
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency")#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,12,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,17,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)
+overlap_shade(y2,y3,xseq)
+overlap_shade(y3,y4,xseq)
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency")#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,12,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,17,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)#
+overlap_shade(y2,y3,xseq)#
+overlap_shade(y3,y4,xseq)
+text(1,max(y1)*1.2,"species1")
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency",cex.lab=2)#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,12,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,17,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)#
+overlap_shade(y2,y3,xseq)#
+overlap_shade(y3,y4,xseq)
+text(1,max(y1)*1.2,"species1")
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency",cex.lab=2)#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,12,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,17,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)#
+overlap_shade(y2,y3,xseq)#
+overlap_shade(y3,y4,xseq)
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency",cex.lab=1.5)#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,12,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,17,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)#
+overlap_shade(y2,y3,xseq)#
+overlap_shade(y3,y4,xseq)
+text(1,max(y1)*1.2,"species 1")
+text(5,max(y2)*1.2,"species 2")#
+text(12,max(y3)*1.2,"species 3")#
+text(17,max(y4)*1.2,"species 4")
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="",ylab="",cex.lab=1.5)#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,12,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,17,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)#
+overlap_shade(y2,y3,xseq)#
+overlap_shade(y3,y4,xseq)#
+#
+text(1,max(y1)*1.2,"species 1")#
+text(5,max(y2)*1.2,"species 2")#
+text(12,max(y3)*1.2,"species 3")#
+text(17,max(y4)*1.2,"species 4")
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="",ylab="",cex.lab=1.5)#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,10,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,14,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)#
+overlap_shade(y2,y3,xseq)#
+overlap_shade(y3,y4,xseq)#
+#
+text(1,max(y1)*1.2,"species 1")#
+text(5,max(y2)*1.2,"species 2")#
+text(10,max(y3)*1.2,"species 3")#
+text(14,max(y4)*1.2,"species 4")
+xseq= seq(-10,30,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="",ylab="",cex.lab=1.5)#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,11,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,16,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)#
+overlap_shade(y2,y3,xseq)#
+overlap_shade(y3,y4,xseq)#
+#
+text(1,max(y1)*1.2,"species 1")#
+text(5,max(y2)*1.2,"species 2")#
+text(11,max(y3)*1.2,"species 3")#
+text(16,max(y4)*1.2,"species 4")
+xseq= seq(-5,25,length=400)#
+y1 = dnorm(xseq,1,2)#
+plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="",ylab="",cex.lab=1.5)#
+y2 = dnorm(xseq,5,2)#
+lines(xseq,y2)#
+y3 = dnorm(xseq,11,2)#
+lines(xseq,y3)#
+#
+y4 = dnorm(xseq,16,2)#
+lines(xseq,y4)#
+#
+overlap_shade(y1,y2,xseq)#
+overlap_shade(y2,y3,xseq)#
+overlap_shade(y3,y4,xseq)
+2/exp(1)
+x=1:100
+y=(1/x)^x
+plot(y~x)
+x=x/100
+y=(1/x)^x
+plot(y~x)
+x=x+0.5
+y=(1/x)^x
+plot(y~x)
+z=(y^2-1)/(y+1)
+plot(z~x)
+SSN <- function(ltheta, Dr,lC){#
+	1/(1 - Dr)* (lC+ltheta)#
+}
+ltheta <- seq(1,10,length=10)#
+for(Dr in c(0,0.5,1)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	plot(lN~ltheta,col=0,axt="n",xlab="log(theta)",ylab="log(N)")#
+	lines(ltheta,lN)#
+	text(c(ltheta[10],lN[10]+1),paste("Dr =",Dr,))#
+}
+ltheta <- seq(1,10,length=10)#
+lC <- 1#
+for(Dr in c(0,0.5,1)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	plot(lN~ltheta,col=0,axt="n",xlab="log(theta)",ylab="log(N)")#
+	lines(ltheta,lN)#
+	text(c(ltheta[10],lN[10]+1),paste("Dr =",Dr,))#
+}#
+SSN <- function(ltheta, Dr,lC){#
+	1/(1 - Dr)* (lC+ltheta)#
+}
+?text
+ltheta <- seq(1,10,length=10)#
+lC <- 1#
+for(Dr in c(0,0.5,1)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,xaxt="n",yaxt='n',xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}#
+SSN <- function(ltheta, Dr,lC){#
+	1/(1 - Dr)* (lC+ltheta)#
+}
+ltheta <- seq(1,10,length=10)#
+lC <- 1#
+for(Dr in c(0,0.5,1)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,xaxt="n",yaxt='n',xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}#
+SSN <- function(ltheta, Dr,lC){#
+	1/(Dr-1)* (lC+ltheta)#
+}
+SSN <- function(ltheta, Dr,lC){#
+	1/(Dr-1)* (lC+ltheta)#
+}
+ltheta <- seq(1,10,length=10)#
+lC <- 1#
+for(Dr in c(0,0.5,1)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,xaxt="n",yaxt='n',xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+for(Dr in c(0,0.5,1)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,axis=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+lC <- 1#
+for(Dr in c(0,0.5,1)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+for(Dr in c(0,0.5,0.9)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+for(Dr in c(0,0.5,0.6)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+for(Dr in c(0,0.3,0.5)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+for(Dr in c(0,0.5,0.8)){#
+	lN <- SSN(ltheta,Dr,lC)#
+	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+library(nleqslv)#
+#
+solve.analytical <- function(theta_seq,Dr_seq,R,r=1){##given r solve for N+g; r=1 is the special case for equilibrium where N+g=Ne#
+	r_seq <- c(r,rep(1,length(theta_seq)-length(r)))#
+	C <- get.C(theta_seq,Dr_seq,R,r_seq)#
+	analytical.sol(C,theta_seq,Dr_seq,r_seq)#
+}#
+#
+get.C <- function(theta_seq,Dr_seq,R,r_seq){#
+	init.C <- 1/mean(theta_seq)#
+	C <- nleqslv(init.C,R_constraint,theta_seq=theta_seq,Dr_seq=Dr_seq,R=R,r_seq=r_seq)#
+	if(C[[3]]!=1&&C[[3]]!=2){#
+		print(C[[4]])#
+	}#
+	C[[1]]#
+}#
+#
+R_constraint <- function(C,theta_seq,Dr_seq,R,r_seq){#
+	R-sum(theta_seq*analytical.sol(C,theta_seq,Dr_seq,r_seq))#
+}#
+#
+analytical.sol <- function(C,theta_seq,Dr_seq,r_seq){#
+	2/exp(1)*(C*theta_seq*r_seq^(0.5/theta_seq))^(1/(Dr_seq-1))#
+}
+ltheta <- seq(1,5,length=10)#
+R0 <- 100#
+#
+for(Dr in c(0,0.5,0.8)){#
+	lN <- log(solve.analytical(10^ltheta,Dr_seq=rep(Dr,10),R0))#
+	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+for(Dr in c(0,0.5,1)){#
+	lN <- log(solve.analytical(10^ltheta,Dr_seq=rep(Dr,10),R0))#
+	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+for(Dr in c(0,0.5,0.9)){#
+	lN <- log(solve.analytical(10^ltheta,Dr_seq=rep(Dr,10),R0))#
+	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
+	lines(ltheta,lN)#
+	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
+}
+install.packages("devtools")#
+library(devtools)
+install.packages("dplyr")#
+install.packages("ggplot2")
+install_github("StatsWithR/statsr")
+16650-2438
+pnorm(24,21.5)
+pnorm(24,21,5)
+qnorm(0.1)
+dbinom(2,size=10,p=0.56)
+dbinom(2,size=3,p=0.51)
+pnorm(34,24,4)
+0.6/0.7
+6/13
+dbinom(0,10,0.07)
+pnorm(2,0,1)
+pnorm(1,0,1)
+1-2*(1-pnorm(1,0,1))
+1-2*(1-pnorm(2,0,1))
+0.055*0.99/(0.055*0.99+0.005*0.945)
+1-pbinom(50,160,0.28)
+0.28*160
+sqrt(44.8*0.72)
+1-pbinom(50,44.8,5.68)
+1-pnorm(50,44.8,5.68)
+x= c(3,2,4)
+y = c(1,2)
+x*y
+t.tests?
+?t.tests
+?cbind
+?t.test
+unclass (as.Date (“2016-10-05″))
+unclass (as.Date("2016-10-05"))
+?invisible
+t.test(y~x)
+t.test(y1,y2)
+t.test(y,x)
+summary(t.test(y,x))
+summary(t.test(y,x))$p.value
+t.test(y,x)$p.value
+?pca
+?cor
+cor(x,y)
+x
+u
+y
+y=c(1,2,3)
+cor(x,y)
+summary(cor(x,y))
+names(cor(x,y))
+??corr
+cor.test(x,y)
+?glm
+counts <- c(18,17,15,20,10,20,25,13,12)#
+outcome <- gl(3,1,9)#
+treatment <- gl(3,3)#
+print(d.AD <- data.frame(treatment, outcome, counts))#
+glm.D93 <- glm(counts ~ outcome + treatment, family = poisson())#
+anova(glm.D93)#
+summary(glm.D93)
+outcome
+?gl
+treatment
+d.AD
+glm.D93
+predict(glm.D93)
+anova(glm.D93)
+summary(anova(glm.D93))
+?anova
+names(anova(glm.D93))
+?aov
+?lm
+lm(d.AD$counts~d.AD$treatment)
+lm(d.AD$counts~d.AD$treatment+d.AD$outcome)
+d.AD
+aov(d.AD$counts~d.AD$treatment+d.AD$outcome)
+setdiff(x,y)
+setdiff(y,x)
+x
+y
+attach(mtcars)
+gears <- factor(gears)#
+cyl <- factor(cyl)#
+interaction.plot(cyl, gear, mpg, type="b", col=c(1:3), #
+   leg.bty="o", leg.bg="beige", lwd=2, pch=c(18,24,22), #
+   xlab="Number of Cylinders", #
+   ylab="Mean Miles Per Gallon", #
+   main="Interaction Plot")
+gear <- factor(gear)
+interaction.plot(cyl, gear, mpg, type="b", col=c(1:3), #
+   leg.bty="o", leg.bg="beige", lwd=2, pch=c(18,24,22), #
+   xlab="Number of Cylinders", #
+   ylab="Mean Miles Per Gallon", #
+   main="Interaction Plot")
+?pair
+?pairs
+var2<- c("I","Love,"DeZyre")
+?lapply
+3/16
+9/64
+?mle
+install.packages("stats4")
+library(stats4)
+library(class)
+?knn
+qnorm(0.01)
+9.4/sqrt(506)
+qnorm(0.05)
+1.64*4.31/6
+1.64*4.31/6+30.69
+-1.64*4.31/6+30.69
+library(devtools)
+install_github("StatsWithR/statsr")
+pnorm(1.73)
+2*(1-pnorm(1.73))
+qnorm(0.99)
+qnorm(0.99) * 300
+(qnorm(0.99) * 300/40)^2
+(30.69-32)/4.31*6
+pnorm(1.82)
+2*(1-pnorm(1.82))
+qnorm(0.005)
+pt(2,df=10, lower.tail=F)*2
+?pt
+(52.1-27.1)/sqrt(45.1^2 + 26.4^2)*sqrt(22)
+?qt
+qt(0.025,df=21)
+pt(2.24,df=21)*2
+pt(2.24,df=21,lower.tail=F)*2
+pt(-0.87,df=199)*2
+pnorm(-0.2)
+qnorm(0.8)
+pt(0.5,df=17,lower.tail=F)*2
+pnorm(0.975)
+qnorm(0.975)
+qnorm(0.995)
+sqrt(3.4^2 + 2.7^2)/sqrt(18)
+0.05/36
+pt(2.485,df=25,lower.tail=F)*2
+?str
+1.96^2 *0.85*0.15/0.03^2
+1.96^2 *0.5*0.5/0.03^2
+11/12
+962/1293 * 440
+295/533
+p=295/533
+p
+sqrt(p*(1-p)/71+p*(1-p)/224)
+sqrt(p*(1-p)/144+p*(1-p)/389)
+sqrt(0.3*0.7/50)
+57*0.05
+57*0.05/2
+39*0.05
+-3920+530.9*6
+-3537+530.9*5
+-2878+530.9*4
+81.4 + 0.62 * 13.1 - 64.68
+13.1 + 0.62*81.4 - 64.68
+?pt
+qt(0.025,df=25)
+qt(0.025)
+qt(0.025,df=100)
+pt(3.24,df=98)
+2*(1-pt(3.24,df=98))
+2*(1-pt(2.42,df=98))
+2*(1-pt(3.24,df=99))
+0.877+0.067*qt(0.975,df=243)
+0.877-0.067*qt(0.975,df=243)
+?plot_ss
+library(ggplot2)
+?plot_ss
+library(dplyr)
+?plot_ss
+132.57/480/25
+132.57/480.25
+install.packages("GGally")#
+library(GGally)
+for x in 1:3{}
+load("/Users/jadezhang/Downloads/_e1fe0c85abec6f73c72d73926884eaca_movies.Rdata")
+n = 1:25
+x = (1/(2*n-1))
+x
+1.49
+1/49
+sum(x)
+n = 1:50
+x = (1/(2*n-1))
+x
+sum(x)
+45^2 + 40^2
+(990/2)^2 + (980/2)^2
+10000/240*10
+remove.packages("rPython")
+library(rPython)
+setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
+python.load("domain.py")
+attractions <- python.get("attractions")
+attractions
+route_url <- python.get("url")
+route_url
+python.assign("city", city)
+city = "San Francisco"
+python.assign("city", city)
+python.load("domain.py")
+attractions <- python.get("attractions")
+route_url <- python.get("url")
+attractions
+city = "Los Angeles"
+python.assign("city", city)
+python.load("domain.py")
+attractions <- python.get("attractions")
+route_url <- python.get("url")
+attractions
+route_url
