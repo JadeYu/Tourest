@@ -6,11 +6,12 @@ import yelp_attraction_search as ya
 import googlemaps
 from datetime import datetime
 import route_generating as rg
+import input_support as ins
 
 gmaps = googlemaps.Client(key='AIzaSyDR5O0GRTeZn9Y1vW3ypD3aaIBSlmmJht4')
 
 # *********the user selects city, starting/ending points and the number of attractions to show**********
-#city = "San Francisco"
+city = "San Francisco"
 start = "San Francisco" #consider concatenating the name of the city and state
 end = start
 nlist = 20
@@ -30,9 +31,11 @@ for i in range(nlist):
     attraction_urls[business['name']] = business['url']
     print(business['name'])
 print("---------------------------------------------------")
+attractions_show = ins.add_num(attractions)
 
 #**********the user selects attractions to go**********
-attraction_selection = [1,5,10]
+Aselection = '1,5,10'
+attraction_selection = ins.str2nlist(Aselection)
 print("attractions selected:")
 for i in attraction_selection:
     print(attractions[i])
@@ -60,14 +63,15 @@ for i in attraction_selection:
             restaurants.append(name)
             restaurant_locations[name] = business['location']['coordinate']
             restaurant_urls[name] = business['url']
-
+            
+restaurants_show = ins.add_num(restaurants)
 print("restaurants nearby: ")
 print(restaurants)
 print("---------------------------------------------------")
 
 #**********the user selects restaurant(s) to go**********
-restaurant_selection = [2,3]
-
+Rselection = '2,3'
+restaurant_selection = ins.str2nlist(Rselection)
 #add attractions and restaurants to waypoints
 waypoint_addresses = []
 for i in attraction_selection:
@@ -83,7 +87,7 @@ for j in restaurant_selection:
 
 #determine an optimized route through the selected waypoints
 mode = "driving"
-route = rg.optimize_route(start, end, waypoint_addresses, mode)
+route = rg.optimize_route(city, start, end, waypoint_addresses, mode)
 
 #**********take in an alternative route if specified by the user**********
 #selected_order = []
