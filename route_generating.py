@@ -2,14 +2,11 @@ import googlemaps
 gmaps = googlemaps.Client(key='AIzaSyDR5O0GRTeZn9Y1vW3ypD3aaIBSlmmJht4')
 
 #determine optimized route 
-def optimize_route(city, start, end, waypoints, mode = "driving"):
-    start = '{}, {}'.format(start, city)
-    end = '{}, {}'.format(end, city)
+def optimize_route(start, end, waypoints):
     directions_result = gmaps.directions(start,
                                      end,
                                      waypoints = waypoints,
-                                     optimize_waypoints = True,
-                                     mode= mode)
+                                     optimize_waypoints = True)
     optimized_order = directions_result[0]['waypoint_order']
     optimized_waypoints = list(map(lambda x: waypoints[optimized_order[x]],range(len(waypoints))))
     route = []

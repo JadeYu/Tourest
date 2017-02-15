@@ -1,13 +1,13 @@
 import rauth
 import time
 
-def get_para_attractions(city,num):
+def get_para_attractions(city,state,num):
     params = {}
     params["term"] = "Landmark"
-    params["location"] = city
+    params["location"] = "{}, {}".format(city, state)
     params["limit"] = str(num)
     params["sort"] = 2 #sort by rating
-    params["radius_filter"] = "10000"
+    params["radius_filter"] = "5000"
     return params
 
 #Category can be Arts & Entertainment, Active Life, or Food

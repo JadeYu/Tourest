@@ -14,10 +14,10 @@ def str2nlist(string):
         if string[i] != ',':
             sn += string[i]
         else:
-            result.append(int(sn))
+            result.append(int(sn)-1)
             sn = ''
         i += 1
-    result.append(int(sn))
+    result.append(int(sn)-1)
     return result
 
 def add_num(names):
@@ -32,3 +32,12 @@ def add_num(names):
     for i in range(len(names)):
         nnames.append('{}. {}'.format(str(i+1), names[i]))
     return nnames
+
+def str2bool(string):
+    """
+    Convert yes/no answer to boolean true/false.
+    """
+    if string == "Yes":
+        return True
+    else:
+        return False

@@ -1,7 +1,4 @@
-import sys
-sys.path.append("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
-
-import yelp_attraction_search as ya
+import yelp_api as ya
 import input_support as ins
 
 def list_restaurants(attractions, selection, dining_pref, radius):
@@ -31,5 +28,3 @@ def list_restaurants(attractions, selection, dining_pref, radius):
     rest_show = ins.add_num(rests)
     return {'name':rests, 'loc':rest_locs, 'show': rest_show}
 
-#all parameters will be given in R
-#restaurants = list_restaurants(attractions, selection, dining_pref, radius)
