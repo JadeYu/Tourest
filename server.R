@@ -1,4 +1,3 @@
-setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
 source("RTourest.R")
 
 shinyServer(function(input, output){
@@ -6,20 +5,26 @@ shinyServer(function(input, output){
 		filename <- paste("graphs/wait",sample(1:7,1),".jpg",sep = "")
     		list(src = filename, contentType = 'image/png', width = 600, height = 350, alt = "Uh-oh, the picture's gone Xb")
 	}, deleteFile = F)
+	#do not put input$something within render functions! Will cause instant response in output.
 	observeEvent(input$showA,{
-    		output$attractions <-renderTable({show_attractions(input$state, input$city, 15)})
+		state = input$state
+		city = input$city
+    		output$attractions <-renderTable({show_attractions(state, city, 15)})
 	})
 	observeEvent(input$showR,{
-    	output$restaurants <-renderTable({show_restaurants(input$Aselection, input$dining_pref, input$radius)})
+	Aselection = input$Aselection
+	dining_pref = input$dining_pref
+	radius = input$radius
+    	output$restaurants <-renderTable({show_restaurants(Aselection, dining_pref, radius)})
 	})
-	#output$restaurants <- eventReactive(input$showR, {
-		#renderTable({show_restaurants(input$Aselection, input$dining_pref, input$radius)})
-	#})
 	observeEvent(input$showU,{
+		Rselection = input$Rselection
+		start = input$start
+		end = input$end
 		if(input$same){
-			output$url <-renderText({show_url(input$Rselection, input$start, input$start)})
+			output$url <-renderUI(a(href=show_url(Rselection, start, start),"Show in Google Map",target="_blank"))
 		}else{
-			output$url <-renderText({show_url(input$Rselection, input$start, input$end)})
+			output$url <-renderUI(a(href=show_url(Rselection, start, end),"Show in Google Map",target="_blank"))
 		}
 	})
 })

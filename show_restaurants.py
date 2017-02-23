@@ -25,6 +25,6 @@ def list_restaurants(attractions, selection, dining_pref, radius):
             if(name not in rests):
                 rests.append(name)
                 rest_locs[name] = business['location']['coordinate']
-    rest_show = ins.add_num(rests)
+    rest_show = ins.add_num(ins.deslash(rests))
     return {'name':rests, 'loc':rest_locs, 'show': rest_show}
 

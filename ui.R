@@ -19,12 +19,12 @@ shinyUI(
       				condition = "input.showR > 0",
       				textInput("Rselection", label = "Select restaurant(s)", value = "1", placeholder = "1, 2"),
       				helpText("For example: 1, 3"),
-      				textInput("start", label = "Starting point", value = "Airport", placeholder = "Airport"),
+      				textInput("start", label = "Starting point", value = "City Hall", placeholder = "City Hall"),
       				helpText("You can put in: Downtown Bart or Super 8"),
       				checkboxInput("same", "Ending point is the same", FALSE),
       				conditionalPanel(
       					condition = "!input.same",
-      					textInput("end", label = "Ending point", value = "Airport", placeholder = "Airport")
+      					textInput("end", label = "Ending point", value = "City Hall", placeholder = "City Hall")
       				),
       				actionButton("showU","Generate an optimized route")
       			),
@@ -53,8 +53,7 @@ shinyUI(
       				condition = "input.showU > 0",
       				h3("Optimized route:"),
       				column(12,
-      					htmlOutput("url"),
-      					a(href=htmlOutput("url"),"Show in Google Map",target="_blank")
+      					uiOutput("url")
       				)
       			)
     			)

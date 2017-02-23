@@ -1,38 +1,3 @@
-xs
-y2s <- y2[(y2>10^(-5))&(xseq<inter)]
-for(i in 1:length(xs)){#
-		lines(c(xs[i],xs[i]),c(0,y2s[i]))#
-	}
-xs <- xseq[(y1>10^(-5))&(xseq<inter)]#
-	y1s <- y1[(y1>10^(-5))&(xseq<inter)]#
-	for(i in 1:length(xs)){#
-		lines(c(xs[i],xs[i]),c(0,y1s[i]))#
-	}
-overlap_shade <- function(y1,y2,xseq){#
-	inter <- xseq[sum(y1>y2)]#
-	xs <- xseq[(y2>10^(-5))&(xseq<inter)]#
-	y2s <- y2[(y2>10^(-5))&(xseq<inter)]#
-	for(i in 1:length(xs)){#
-		lines(c(xs[i],xs[i]),c(0,y2s[i]))#
-	}#
-	xs <- xseq[(y1>10^(-5))&(xseq>inter)]#
-	y1s <- y1[(y1>10^(-5))&(xseq>inter)]#
-	for(i in 1:length(xs)){#
-		lines(c(xs[i],xs[i]),c(0,y1s[i]))#
-	}#
-}
-overlap_shade(y1,y2,xseq)
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency")#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,12,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,17,2)#
-lines(xseq,y4)
-overlap_shade(y1,y2,xseq)
 overlap_shade <- function(y1,y2,xseq){#
 	inter <- xseq[sum(y1>y2)]#
 	xs <- xseq[(y2>10^(-5))&(xseq<inter)]#
@@ -651,10 +616,6 @@ state = "California"#
 city = "San Francisco"#
 nlist = 20#
 show_attractions(state, city, nlist)
-state = "California"#
-city = "San Francisco"#
-nlist = 20#
-show_attractions(state, city, nlist)
 Aselection = '6,7,20'#
 dining_pref = 'Chinese'#
 radius = 2000#
@@ -663,3 +624,152 @@ Rselection = '1,2'#
 start = "City Hall"#
 end = start#
 show_url(Rselection, start, end)
+setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
+source("RTourest.R")
+library(shiny)
+ui <- fluidPage(#
+		titlePanel("Show map of a given state"),#
+  		sidebarLayout(#
+    		sidebarPanel(#
+      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
+      		actionButton("showU","Show map")#
+      		),#
+    		mainPanel(#
+           		conditionalPanel(#
+      				condition = "input.showU > 0",#
+      				h3(textOutput("state")),#
+      				a(href=uiOutput("url"),"Show in Google Map",target="_blank")#
+      			)#
+    		)#
+		)#
+	)#
+#
+server <- function(input, output){#
+	output$state <- renderText(paste("Map of", input$state, ":"))#
+	observeEvent(input$showU,{#
+		output$url <-renderUI({paste("https://www.google.com/maps/place/", input$state, sep="")})#
+	})#
+}#
+#
+shinyApp(ui,server)
+ui <- fluidPage(#
+		titlePanel("Show map of a given state"),#
+  		sidebarLayout(#
+    		sidebarPanel(#
+      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
+      		actionButton("showU","Show map")#
+      		),#
+    		mainPanel(#
+           		conditionalPanel(#
+      				condition = "input.showU > 0",#
+      				h3(textOutput("state")),#
+      				a(href=uiOutput("url"),"Show in Google Map",target="_blank")#
+      			)#
+    		)#
+		)#
+	)#
+#
+server <- function(input, output){#
+	observeEvent(input$showU,{#
+		output$state <- renderText(paste("Map of", input$state, ":"))#
+		output$url <-renderUI({paste("https://www.google.com/maps/place/", input$state, sep="")})#
+	})#
+}#
+#
+shinyApp(ui,server)
+ui <- fluidPage(#
+		titlePanel("Show map of a given state"),#
+  		sidebarLayout(#
+    		sidebarPanel(#
+      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
+      		actionButton("showU","Show map")#
+      		),#
+    		mainPanel(#
+           		conditionalPanel(#
+      				condition = "input.showU > 0",#
+      				h3(textOutput("state")),#
+      				uiOutput("url")#
+      			)#
+    		)#
+		)#
+	)#
+#
+server <- function(input, output){#
+	observeEvent(input$showU,{#
+		output$state <- renderText(paste("Map of", input$state, ":"))#
+		output$url <-renderUI({a(href=uiOutput(paste("https://www.google.com/maps/place/", input$state, sep="")),"Show in Google Map",target="_blank")})#
+	})#
+}#
+#
+shinyApp(ui,server)
+ui <- fluidPage(#
+		titlePanel("Show map of a given state"),#
+  		sidebarLayout(#
+    		sidebarPanel(#
+      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
+      		actionButton("showU","Show map")#
+      		),#
+    		mainPanel(#
+           		conditionalPanel(#
+      				condition = "input.showU > 0",#
+      				h3(textOutput("state")),#
+      				uiOutput("url")#
+      			)#
+    		)#
+		)#
+	)#
+#
+server <- function(input, output){#
+	observeEvent(input$showU,{#
+		output$state <- renderText(paste("Map of", input$state, ":"))#
+		output$url <-renderUI({a(href=paste("https://www.google.com/maps/place/", input$state, sep=""),"Show in Google Map",target="_blank")})#
+	})#
+}#
+#
+shinyApp(ui,server)
+ui <- fluidPage(#
+		titlePanel("Show map of a given state"),#
+  		sidebarLayout(#
+    		sidebarPanel(#
+      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
+      		actionButton("showU","Show map")#
+      		),#
+    		mainPanel(#
+      				h3(textOutput("state")),#
+      				uiOutput("url")#
+    		)#
+		)#
+	)#
+#
+server <- function(input, output){#
+	observeEvent(input$showU,{#
+		output$state <- renderText(paste("Map of", input$state, ":"))#
+		output$url <-renderUI({a(href=paste("https://www.google.com/maps/place/", input$state, sep=""),"Show in Google Map",target="_blank")})#
+	})#
+}#
+#
+shinyApp(ui,server)
+ui <- fluidPage(#
+		titlePanel("Show map of a given state"),#
+  		sidebarLayout(#
+    		sidebarPanel(#
+      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
+      		actionButton("showU","Show map")#
+      		),#
+    		mainPanel(#
+      		h3(textOutput("state")),#
+      		uiOutput("url")#
+    		)#
+		)#
+	)#
+#
+server <- function(input, output){#
+	#observeEvent(input$showU,{#
+		#output$state <- renderText(paste("Map of", input$state, ":"))#
+		#output$url <-renderUI({a(href=paste("https://www.google.com/maps/place/", input$state, sep=""),"Show in Google Map",target="_blank")})#
+	#})#
+	output$state <- eventReactive(input$showU, renderText(paste("Map of", input$state, ":")))#
+	output$url <- eventReactive(input$showU, renderUI({a(href=paste("https://www.google.com/maps/place/", input$state, sep=""),"Show in Google Map",target="_blank")}))#
+}#
+#
+shinyApp(ui,server)

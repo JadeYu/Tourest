@@ -1,10 +1,12 @@
 #test the functions
+setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
 source("RTourest.R")
 state = "California"
 city = "San Francisco"
 nlist = 15
 show_attractions(state, city, nlist)
-Aselection = '6,7'
+#number 8 in san francisco has \ in name
+Aselection = '1,8'
 dining_pref = 'Chinese'
 radius = 2000
 show_restaurants(Aselection, dining_pref, radius)

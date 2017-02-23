@@ -19,5 +19,5 @@ def list_attractions(city, state, nlist):
         business = result['businesses'][i]
         attrs.append(business['name'])
         attr_locs[business['name']] = business['location']['coordinate']
-    attrs_show = ins.add_num(attrs)
+    attrs_show = ins.add_num(ins.deslash(attrs))
     return {'name': attrs, 'loc': attr_locs, 'show': attrs_show}

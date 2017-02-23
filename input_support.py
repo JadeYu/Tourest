@@ -20,6 +20,14 @@ def str2nlist(string):
     result.append(int(sn)-1)
     return result
 
+def deslash(lstr):
+    """
+    Get rid of back slashes in all strings of the given list.
+    """
+    for i in range(len(lstr)):
+        lstr[i] = lstr[i].replace("\\","")
+    return lstr
+                
 def add_num(names):
     """
     Add a number in front of each string element of the list.
