@@ -1,5 +1,5 @@
-import sys
-sys.path.append("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
+#import sys
+#sys.path.append("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
 import show_attractions as sa
 import show_restaurants as sr
 import show_url as su
@@ -12,7 +12,7 @@ attractions = sa.list_attractions(city, state, nlist)
 print(attractions['show'])
 
 #step 2, user selects attractions to go
-Aselection = '8,9'
+Aselection = '1,9'
 
 #step 3, show a list of restaurants
 dining_pref = 'Chinese'

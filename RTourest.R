@@ -1,10 +1,10 @@
 library(rPython)
+python.load("pyTourest.py")
 
 show_attractions <- function(state, city, nlist){
 	python.assign("state", state)
 	python.assign("city", city)
 	python.assign("nlist", nlist)
-	python.load("show_attractions.py")
 	python.exec("attractions = list_attractions(city, state, nlist)")
 	attractions = python.get("attractions")
 	char2table(attractions$show, 3)
@@ -14,8 +14,7 @@ show_restaurants <- function(Aselection, dining_pref, radius){
 	python.assign("Aselection", Aselection)
 	python.assign("dining_pref", dining_pref)
 	python.assign("radius", radius)
-	python.exec("import show_restaurants as sr")
-	python.exec("restaurants = 	sr.list_restaurants(attractions, Aselection, dining_pref, radius)")
+	python.exec("restaurants = 	list_restaurants(attractions, Aselection, dining_pref, radius)")
 	restaurants = python.get("restaurants")
 	char2table(restaurants$show)
 }
@@ -34,7 +33,6 @@ show_url <- function(Rselection, start, end){
 	python.assign("Rselection", Rselection)
 	python.assign("start", start)
 	python.assign("end", end)
-	python.exec("import show_url as su")
-	python.exec("url = su.generate_url(city, state, start, end, attractions, Aselection, restaurants, Rselection)")
+	python.exec("url = generate_url(city, state, start, end, attractions, Aselection, restaurants, Rselection)")
 	python.get("url")
 }

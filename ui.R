@@ -8,8 +8,8 @@ shinyUI(
       			actionButton("showA","Show the most popular attractions"),
       			conditionalPanel(
       				condition = "input.showA > 0",
-      				textInput("Aselection", label = "Select attractions", value = "1", placeholder = "1, 3, 6"),
-      				helpText("For example: 1, 3, 6"), 
+      				textInput("Aselection", label = "Select attractions", value = "2, 4"),
+      				helpText("For example: 2, 4, 6"), 
       				textInput("dining_pref", label = "Specify dining preference", value = "Chinese", placeholder = "Chinese"),
       				helpText("You can put in: Italian, Chinese"),
       				sliderInput("radius", label = "Search radius from the selected attractions (m)", min = 500, max = 5000, value = 2000, round = TRUE, animate = TRUE),
@@ -17,7 +17,7 @@ shinyUI(
       			),
       			conditionalPanel(
       				condition = "input.showR > 0",
-      				textInput("Rselection", label = "Select restaurant(s)", value = "1", placeholder = "1, 2"),
+      				textInput("Rselection", label = "Select restaurant(s)", value = "1"),
       				helpText("For example: 1, 3"),
       				textInput("start", label = "Starting point", value = "City Hall", placeholder = "City Hall"),
       				helpText("You can put in: Downtown Bart or Super 8"),
@@ -28,7 +28,7 @@ shinyUI(
       				),
       				actionButton("showU","Generate an optimized route")
       			),
-      			helpText("Codes and data can be found in:", a(href="https://github.com/JadeYu/Tourest.git","GitHub",target="_blank"))     
+      			helpText("Codes can be found in:", a(href="https://github.com/JadeYu/Tourest.git","GitHub",target="_blank"))     
      		),
     			mainPanel(
       			conditionalPanel(

@@ -1,385 +1,3 @@
-overlap_shade <- function(y1,y2,xseq){#
-	inter <- xseq[sum(y1>y2)]#
-	xs <- xseq[(y2>10^(-5))&(xseq<inter)]#
-	y2s <- y2[(y2>10^(-5))&(xseq<inter)]#
-	for(i in 1:length(xs)){#
-		lines(c(xs[i],xs[i]),c(0,y2s[i]))#
-	}#
-	xs <- xseq[(y1>10^(-5))&(xseq>=inter)]#
-	y1s <- y1[(y1>10^(-5))&(xseq>=inter)]#
-	for(i in 1:length(xs)){#
-		lines(c(xs[i],xs[i]),c(0,y1s[i]))#
-	}#
-}
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency")#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,12,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,17,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)
-overlap_shade(y2,y3,xseq)
-overlap_shade(y3,y4,xseq)
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency")#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,12,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,17,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)#
-overlap_shade(y2,y3,xseq)#
-overlap_shade(y3,y4,xseq)
-text(1,max(y1)*1.2,"species1")
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency",cex.lab=2)#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,12,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,17,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)#
-overlap_shade(y2,y3,xseq)#
-overlap_shade(y3,y4,xseq)
-text(1,max(y1)*1.2,"species1")
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency",cex.lab=2)#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,12,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,17,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)#
-overlap_shade(y2,y3,xseq)#
-overlap_shade(y3,y4,xseq)
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="Trait",ylab="Frequency",cex.lab=1.5)#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,12,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,17,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)#
-overlap_shade(y2,y3,xseq)#
-overlap_shade(y3,y4,xseq)
-text(1,max(y1)*1.2,"species 1")
-text(5,max(y2)*1.2,"species 2")#
-text(12,max(y3)*1.2,"species 3")#
-text(17,max(y4)*1.2,"species 4")
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="",ylab="",cex.lab=1.5)#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,12,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,17,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)#
-overlap_shade(y2,y3,xseq)#
-overlap_shade(y3,y4,xseq)#
-#
-text(1,max(y1)*1.2,"species 1")#
-text(5,max(y2)*1.2,"species 2")#
-text(12,max(y3)*1.2,"species 3")#
-text(17,max(y4)*1.2,"species 4")
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="",ylab="",cex.lab=1.5)#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,10,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,14,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)#
-overlap_shade(y2,y3,xseq)#
-overlap_shade(y3,y4,xseq)#
-#
-text(1,max(y1)*1.2,"species 1")#
-text(5,max(y2)*1.2,"species 2")#
-text(10,max(y3)*1.2,"species 3")#
-text(14,max(y4)*1.2,"species 4")
-xseq= seq(-10,30,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="",ylab="",cex.lab=1.5)#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,11,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,16,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)#
-overlap_shade(y2,y3,xseq)#
-overlap_shade(y3,y4,xseq)#
-#
-text(1,max(y1)*1.2,"species 1")#
-text(5,max(y2)*1.2,"species 2")#
-text(11,max(y3)*1.2,"species 3")#
-text(16,max(y4)*1.2,"species 4")
-xseq= seq(-5,25,length=400)#
-y1 = dnorm(xseq,1,2)#
-plot(y1~xseq,ylim=c(0,0.5),type='l',xaxt='n',yaxt='n',xlab="",ylab="",cex.lab=1.5)#
-y2 = dnorm(xseq,5,2)#
-lines(xseq,y2)#
-y3 = dnorm(xseq,11,2)#
-lines(xseq,y3)#
-#
-y4 = dnorm(xseq,16,2)#
-lines(xseq,y4)#
-#
-overlap_shade(y1,y2,xseq)#
-overlap_shade(y2,y3,xseq)#
-overlap_shade(y3,y4,xseq)
-2/exp(1)
-x=1:100
-y=(1/x)^x
-plot(y~x)
-x=x/100
-y=(1/x)^x
-plot(y~x)
-x=x+0.5
-y=(1/x)^x
-plot(y~x)
-z=(y^2-1)/(y+1)
-plot(z~x)
-SSN <- function(ltheta, Dr,lC){#
-	1/(1 - Dr)* (lC+ltheta)#
-}
-ltheta <- seq(1,10,length=10)#
-for(Dr in c(0,0.5,1)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	plot(lN~ltheta,col=0,axt="n",xlab="log(theta)",ylab="log(N)")#
-	lines(ltheta,lN)#
-	text(c(ltheta[10],lN[10]+1),paste("Dr =",Dr,))#
-}
-ltheta <- seq(1,10,length=10)#
-lC <- 1#
-for(Dr in c(0,0.5,1)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	plot(lN~ltheta,col=0,axt="n",xlab="log(theta)",ylab="log(N)")#
-	lines(ltheta,lN)#
-	text(c(ltheta[10],lN[10]+1),paste("Dr =",Dr,))#
-}#
-SSN <- function(ltheta, Dr,lC){#
-	1/(1 - Dr)* (lC+ltheta)#
-}
-?text
-ltheta <- seq(1,10,length=10)#
-lC <- 1#
-for(Dr in c(0,0.5,1)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,xaxt="n",yaxt='n',xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}#
-SSN <- function(ltheta, Dr,lC){#
-	1/(1 - Dr)* (lC+ltheta)#
-}
-ltheta <- seq(1,10,length=10)#
-lC <- 1#
-for(Dr in c(0,0.5,1)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,xaxt="n",yaxt='n',xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}#
-SSN <- function(ltheta, Dr,lC){#
-	1/(Dr-1)* (lC+ltheta)#
-}
-SSN <- function(ltheta, Dr,lC){#
-	1/(Dr-1)* (lC+ltheta)#
-}
-ltheta <- seq(1,10,length=10)#
-lC <- 1#
-for(Dr in c(0,0.5,1)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,xaxt="n",yaxt='n',xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-for(Dr in c(0,0.5,1)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,axis=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-lC <- 1#
-for(Dr in c(0,0.5,1)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-for(Dr in c(0,0.5,0.9)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-for(Dr in c(0,0.5,0.6)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-for(Dr in c(0,0.3,0.5)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-for(Dr in c(0,0.5,0.8)){#
-	lN <- SSN(ltheta,Dr,lC)#
-	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-library(nleqslv)#
-#
-solve.analytical <- function(theta_seq,Dr_seq,R,r=1){##given r solve for N+g; r=1 is the special case for equilibrium where N+g=Ne#
-	r_seq <- c(r,rep(1,length(theta_seq)-length(r)))#
-	C <- get.C(theta_seq,Dr_seq,R,r_seq)#
-	analytical.sol(C,theta_seq,Dr_seq,r_seq)#
-}#
-#
-get.C <- function(theta_seq,Dr_seq,R,r_seq){#
-	init.C <- 1/mean(theta_seq)#
-	C <- nleqslv(init.C,R_constraint,theta_seq=theta_seq,Dr_seq=Dr_seq,R=R,r_seq=r_seq)#
-	if(C[[3]]!=1&&C[[3]]!=2){#
-		print(C[[4]])#
-	}#
-	C[[1]]#
-}#
-#
-R_constraint <- function(C,theta_seq,Dr_seq,R,r_seq){#
-	R-sum(theta_seq*analytical.sol(C,theta_seq,Dr_seq,r_seq))#
-}#
-#
-analytical.sol <- function(C,theta_seq,Dr_seq,r_seq){#
-	2/exp(1)*(C*theta_seq*r_seq^(0.5/theta_seq))^(1/(Dr_seq-1))#
-}
-ltheta <- seq(1,5,length=10)#
-R0 <- 100#
-#
-for(Dr in c(0,0.5,0.8)){#
-	lN <- log(solve.analytical(10^ltheta,Dr_seq=rep(Dr,10),R0))#
-	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-for(Dr in c(0,0.5,1)){#
-	lN <- log(solve.analytical(10^ltheta,Dr_seq=rep(Dr,10),R0))#
-	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-for(Dr in c(0,0.5,0.9)){#
-	lN <- log(solve.analytical(10^ltheta,Dr_seq=rep(Dr,10),R0))#
-	if(Dr==0){plot(lN~ltheta,col=0,axes=F,xlab="log(theta)",ylab="log(N)")}#
-	lines(ltheta,lN)#
-	#text(ltheta[10],(lN[10]+1),paste("Dr =",Dr))#
-}
-install.packages("devtools")#
-library(devtools)
-install.packages("dplyr")#
-install.packages("ggplot2")
-install_github("StatsWithR/statsr")
-16650-2438
-pnorm(24,21.5)
-pnorm(24,21,5)
-qnorm(0.1)
-dbinom(2,size=10,p=0.56)
-dbinom(2,size=3,p=0.51)
-pnorm(34,24,4)
-0.6/0.7
-6/13
-dbinom(0,10,0.07)
-pnorm(2,0,1)
-pnorm(1,0,1)
-1-2*(1-pnorm(1,0,1))
-1-2*(1-pnorm(2,0,1))
-0.055*0.99/(0.055*0.99+0.005*0.945)
-1-pbinom(50,160,0.28)
-0.28*160
-sqrt(44.8*0.72)
-1-pbinom(50,44.8,5.68)
-1-pnorm(50,44.8,5.68)
-x= c(3,2,4)
-y = c(1,2)
-x*y
-t.tests?
-?t.tests
-?cbind
-?t.test
-unclass (as.Date (“2016-10-05″))
-unclass (as.Date("2016-10-05"))
-?invisible
-t.test(y~x)
-t.test(y1,y2)
-t.test(y,x)
-summary(t.test(y,x))
-summary(t.test(y,x))$p.value
-t.test(y,x)$p.value
-?pca
-?cor
-cor(x,y)
-x
-u
-y
-y=c(1,2,3)
-cor(x,y)
-summary(cor(x,y))
-names(cor(x,y))
-??corr
-cor.test(x,y)
-?glm
-counts <- c(18,17,15,20,10,20,25,13,12)#
-outcome <- gl(3,1,9)#
-treatment <- gl(3,3)#
-print(d.AD <- data.frame(treatment, outcome, counts))#
-glm.D93 <- glm(counts ~ outcome + treatment, family = poisson())#
-anova(glm.D93)#
-summary(glm.D93)
-outcome
-?gl
-treatment
-d.AD
-glm.D93
-predict(glm.D93)
-anova(glm.D93)
-summary(anova(glm.D93))
-?anova
-names(anova(glm.D93))
-?aov
-?lm
 lm(d.AD$counts~d.AD$treatment)
 lm(d.AD$counts~d.AD$treatment+d.AD$outcome)
 d.AD
@@ -507,248 +125,12 @@ library(prcomp)
 library(pca)
 ?prcomp
 factorial(365)
-library(rPython)#
-setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")#
-#
-#Step 1: input state, city, #item to show and show attractions.#
-state = "California"#
-city = "Berkeley"#
-nlist = 20#
-python.assign("state", state)#
-python.assign("city", city)#
-python.assign("nlist", nlist)#
-python.load("show_attractions.py")#
-python.exec("attractions = list_attractions(city, state, nlist)")#
-attractions = python.get("attractions")#
-attractions$show#
-#
-#Step 2: input attraction selection, #
-Aselection = '1,7'#
-python.assign("Aselection", Aselection)#
-#
-#Step 3: input dining preference, search radius and show the most popular restaurants nearby.#
-dining_pref = 'Chinese'#
-radius = 2000#
-python.assign("dining_pref", dining_pref)#
-python.assign("radius", radius)#
-python.exec("import show_restaurants as sr")#
-python.exec("restaurants = sr.list_restaurants(attractions, Aselection, dining_pref, radius)")#
-restaurants = python.get("restaurants")#
-restaurants$show#
-#
-#Step 4: select restaurants#
-Rselection = '1,2'#
-python.assign("Rselection", Rselection)#
-#
-#Step 5 (unfinished): generate an optimized route combining a start and end point and waypoints (all destinations above)#
-start = "Downtown Berkeley Bart Station"#
-end = start#
-python.assign("start", start)#
-python.assign("end", end)#
-python.exec("import show_url as su")#
-python.exec("url = su.generate_url(city, state, start, end, attractions, Aselection, restaurants, Rselection)")#
-#
-url = python.get("url")
-url
-state = "California"#
-city = "San Francisco"#
-nlist = 20#
-python.assign("state", state)#
-python.assign("city", city)#
-python.assign("nlist", nlist)#
-python.load("show_attractions.py")#
-python.exec("attractions = list_attractions(city, state, nlist)")#
-attractions = python.get("attractions")#
-attractions$show
-Aselection = '6,7,20'#
-python.assign("Aselection", Aselection)
-dining_pref = 'Chinese'#
-radius = 2000#
-python.assign("dining_pref", dining_pref)#
-python.assign("radius", radius)#
-python.exec("import show_restaurants as sr")#
-python.exec("restaurants = sr.list_restaurants(attractions, Aselection, dining_pref, radius)")#
-restaurants = python.get("restaurants")#
-restaurants$show
-Rselection = '1,2'#
-python.assign("Rselection", Rselection)
-start = "City Hall"#
-end = start#
-python.assign("start", start)#
-python.assign("end", end)#
-python.exec("import show_url as su")#
-python.exec("url = su.generate_url(city, state, start, end, attractions, Aselection, restaurants, Rselection)")
-url = python.get("url")
-rul
-url
-library(rPython)#
-setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")#
-#
-show_attractions <- function(state, city, nlist){#
-	python.assign("state", state)#
-	python.assign("city", city)#
-	python.assign("nlist", nlist)#
-	python.load("show_attractions.py")#
-	python.exec("attractions = list_attractions(city, state, nlist)")#
-	attractions = python.get("attractions")#
-	attractions$show#
-}#
-#
-show_restaurants <- function(Aselection, dining_pref, radius){#
-	python.assign("Aselection", Aselection)#
-	python.assign("dining_pref", dining_pref)#
-	python.assign("radius", radius)#
-	python.exec("import show_restaurants as sr")#
-	python.exec("restaurants = 	sr.list_restaurants(attractions, Aselection, dining_pref, radius)")#
-	restaurants = python.get("restaurants")#
-	restaurants$show#
-}#
-#
-show_url <- function(Rselection, start, end){#
-	python.assign("Rselection", Rselection)#
-	python.assign("start", start)#
-	python.assign("end", end)#
-	python.exec("import show_url as su")#
-	python.exec("url = su.generate_url(city, state, start, end, attractions, Aselection, restaurants, Rselection)")#
-	python.get("url")#
-}
-state = "California"#
-city = "San Francisco"#
-nlist = 20#
-show_attractions(state, city, nlist)
-Aselection = '6,7,20'#
-dining_pref = 'Chinese'#
-radius = 2000#
-show_restaurants(Aselection, dining_pref, radius)
-Rselection = '1,2'#
-start = "City Hall"#
-end = start#
-show_url(Rselection, start, end)
-setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
-source("RTourest.R")
+install.packages("parallel")
+library(paralle)
+library(parallel)
+detectCores() - 1
+?parLapply
 library(shiny)
-ui <- fluidPage(#
-		titlePanel("Show map of a given state"),#
-  		sidebarLayout(#
-    		sidebarPanel(#
-      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
-      		actionButton("showU","Show map")#
-      		),#
-    		mainPanel(#
-           		conditionalPanel(#
-      				condition = "input.showU > 0",#
-      				h3(textOutput("state")),#
-      				a(href=uiOutput("url"),"Show in Google Map",target="_blank")#
-      			)#
-    		)#
-		)#
-	)#
-#
-server <- function(input, output){#
-	output$state <- renderText(paste("Map of", input$state, ":"))#
-	observeEvent(input$showU,{#
-		output$url <-renderUI({paste("https://www.google.com/maps/place/", input$state, sep="")})#
-	})#
-}#
-#
-shinyApp(ui,server)
-ui <- fluidPage(#
-		titlePanel("Show map of a given state"),#
-  		sidebarLayout(#
-    		sidebarPanel(#
-      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
-      		actionButton("showU","Show map")#
-      		),#
-    		mainPanel(#
-           		conditionalPanel(#
-      				condition = "input.showU > 0",#
-      				h3(textOutput("state")),#
-      				a(href=uiOutput("url"),"Show in Google Map",target="_blank")#
-      			)#
-    		)#
-		)#
-	)#
-#
-server <- function(input, output){#
-	observeEvent(input$showU,{#
-		output$state <- renderText(paste("Map of", input$state, ":"))#
-		output$url <-renderUI({paste("https://www.google.com/maps/place/", input$state, sep="")})#
-	})#
-}#
-#
-shinyApp(ui,server)
-ui <- fluidPage(#
-		titlePanel("Show map of a given state"),#
-  		sidebarLayout(#
-    		sidebarPanel(#
-      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
-      		actionButton("showU","Show map")#
-      		),#
-    		mainPanel(#
-           		conditionalPanel(#
-      				condition = "input.showU > 0",#
-      				h3(textOutput("state")),#
-      				uiOutput("url")#
-      			)#
-    		)#
-		)#
-	)#
-#
-server <- function(input, output){#
-	observeEvent(input$showU,{#
-		output$state <- renderText(paste("Map of", input$state, ":"))#
-		output$url <-renderUI({a(href=uiOutput(paste("https://www.google.com/maps/place/", input$state, sep="")),"Show in Google Map",target="_blank")})#
-	})#
-}#
-#
-shinyApp(ui,server)
-ui <- fluidPage(#
-		titlePanel("Show map of a given state"),#
-  		sidebarLayout(#
-    		sidebarPanel(#
-      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
-      		actionButton("showU","Show map")#
-      		),#
-    		mainPanel(#
-           		conditionalPanel(#
-      				condition = "input.showU > 0",#
-      				h3(textOutput("state")),#
-      				uiOutput("url")#
-      			)#
-    		)#
-		)#
-	)#
-#
-server <- function(input, output){#
-	observeEvent(input$showU,{#
-		output$state <- renderText(paste("Map of", input$state, ":"))#
-		output$url <-renderUI({a(href=paste("https://www.google.com/maps/place/", input$state, sep=""),"Show in Google Map",target="_blank")})#
-	})#
-}#
-#
-shinyApp(ui,server)
-ui <- fluidPage(#
-		titlePanel("Show map of a given state"),#
-  		sidebarLayout(#
-    		sidebarPanel(#
-      		textInput("state", label = "State", value = "CA", placeholder = "California or CA"),#
-      		actionButton("showU","Show map")#
-      		),#
-    		mainPanel(#
-      				h3(textOutput("state")),#
-      				uiOutput("url")#
-    		)#
-		)#
-	)#
-#
-server <- function(input, output){#
-	observeEvent(input$showU,{#
-		output$state <- renderText(paste("Map of", input$state, ":"))#
-		output$url <-renderUI({a(href=paste("https://www.google.com/maps/place/", input$state, sep=""),"Show in Google Map",target="_blank")})#
-	})#
-}#
-#
-shinyApp(ui,server)
 ui <- fluidPage(#
 		titlePanel("Show map of a given state"),#
   		sidebarLayout(#
@@ -773,3 +155,144 @@ server <- function(input, output){#
 }#
 #
 shinyApp(ui,server)
+?qqnorm
+?dbinom
+dbinom(4, 20, 0.5)
+pbinom(1, 5, 0.2)
+pbinom(0, 5, 0.2)
+dbinom(0, 5, 0.2)
+(1-dbinom(0, 5, 0.2)) * 0.5
+(1-dbinom(0, 5, 0.1)) * 0.5
+(1-dbinom(0, 5, 0.2)) * 0.5/((1-dbinom(0, 5, 0.2)) * 0.5 + (1-dbinom(0, 5, 0.1)) * 0.5)
+0.45/0.33*0.41
+8/(8+18.9)
+p = seq(0.2, 0.8, length = 5)
+prior = rep(0.125, 5)
+prior[3] = 0.5
+L = p ^3
+posts = L * prior/sum(L *prior)
+posts
+sum(posts[4:5])
+ppois(2, 1.5)
+ppois(2, 1.5, False)
+ppois(2, 1.5, lower.tail=False)
+ppois(2, 1.5, lower.tail=F)
+ppois(1, 1.5)
+ppois(3, 1.5, lower.tail=F)
+ppois(1, 1.5, lower.tail=F)
+exp(-1.5)
+exp(-1.5)*2.5
+2.25*6/(13)
+2.25*6/(7)
+plot(dbeta(seq(0,1,length=100), 50,50)~seq(0,1,length=100))
+pbeta(0.2,4,22)
+2.88/13
+x = rnorm(20)
+y = rnorm(20)+1
+Y = lm(y~x)
+Y
+summary(Y)
+z = gl(1,4,5)
+z
+z = gl(1,4,20)
+z
+z = gl(4,1,20)
+z
+M = glm(z~x+y)
+?glm
+?sample
+?t.test
+t.test(x,y,alternative = "less")
+summary(t.test(x,y,alternative = "less"))
+t.test(x,y,alternative = "less",mu = -1)
+x
+names(t.test(x,y,alternative = "less",mu = -1))
+t.test(x,y,alternative = "less",mu = -1)$statistic
+t.test(x,y,alternative = "less",mu = -1)$estimate
+est = t.test(x,y,alternative = "less",mu = -1)$estimate
+est[1]- est[2]
+t.test(x,y,alternative = "two.sided",mu = -1)
+t.test(x,y,alternative = "two.sided",mu = -1)$parameter
+t.test(x,y,alternative = "two.sided",mu = -2)
+t.test(x,y,alternative = "two.sided",mu = -1, var.equal=TRUE)
+t.test(x,y,alternative = "two.sided",mu = -1, var.equal=FALSE)
+t.test(x,y,alternative = "two.sided",mu = -1, var.equal=FALSE,paired=TRUE)
+?glm
+contrasts
+?contrasts
+x = gl(3,1,6)
+x
+contrasts(x)
+?which
+x
+which(x>1)
+?which
+which(rep(1:3,3))
+which(rep(1:3,3)>1)
+rep(1:3,3)
+which(is.na(match(rep(1:3,3), c(2,3))))
+?ts
+?l1ce
+library(lasso2)
+install.packages("lasso2")
+library(lasso2)
+library(l1ce)
+?l1ce
+?tapply
+n <- 17; fac <- factor(rep(1:3, length = n), levels = 1:5)
+fac
+table(fac)
+tapply(1:n,fac,sum)
+1:n
+tapply(1:n,fac,sum, simplify=False)
+tapply(1:n,fac,sum, simplify=FALSE)
+tapply(1:n,fac,length)
+data(iris)
+names(iris)
+m <- naiveBayes(Species ~ ., data = iris)
+library(e1071)
+install.packages("e1071")
+library(e1071)
+m <- naiveBayes(Species ~ ., data = iris)
+m
+m[,-1]
+m[:,-1]
+dim(m)
+iris[,-1]
+iris[:,-1]
+iris[,-1]
+dim(iris)
+predict(m, iirs[,-5], iris[,5])
+predict(m, iris[,-5], iris[,5])
+m
+iris[,5]
+iris[,-5]
+predict(m, iris[,-5])
+table(predict(m, iris[,-5]), iris[,5])
+?prediction
+library(ROCR)
+iris[,c(1,3)]
+iris[1:3,c(1,3)]
+setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")#
+source("RTourest.R")#
+state = "California"#
+city = "San Francisco"#
+nlist = 15#
+show_attractions(state, city, nlist)#
+#number 8 in san francisco has \ in name#
+Aselection = '2, 4'#
+dining_pref = 'Chinese'#
+radius = 2000#
+show_restaurants(Aselection, dining_pref, radius)#
+Rselection = '1'#
+start = "City Hall"#
+end = start#
+show_url(Rselection, start, end)
+setwd(paste(getwd(),"/..",sep=""))
+library(shiny)
+runApp("Tourest")
+setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
+library(rsconnect)
+rsconnect::setAccountInfo(name='jadeyu', token='2E3890EF686FE7AC0DA99B04127EC7B4', secret='5hU4agOBPgFR/jySmAzK8s4I0dODcNMWKmIKz4Hf')
+deployApp()
+setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
