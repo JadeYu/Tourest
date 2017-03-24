@@ -7,6 +7,7 @@ import time
 def get_para_attractions(city,state,num):
     params = {}
     params["term"] = "Landmark"
+    params["category_filter"] = "active,arts,religiousorgs,shopping"
     params["location"] = "{}, {}".format(city, state)
     params["limit"] = str(num)
     params["sort"] = 2 #sort by rating
@@ -18,7 +19,7 @@ def get_para_attractions(city,state,num):
 def get_para_dining(lat,long,dining_pref,radius):
     params = {}
     params["term"] = dining_pref
-    params["category_filter"] = "food"
+    params["category_filter"] = "restaurants"
     params["ll"] = "{},{}".format(str(lat),str(long))
     params["radius_filter"] = str(radius)
     params["limit"] = "5"

@@ -1,34 +1,3 @@
-lm(d.AD$counts~d.AD$treatment)
-lm(d.AD$counts~d.AD$treatment+d.AD$outcome)
-d.AD
-aov(d.AD$counts~d.AD$treatment+d.AD$outcome)
-setdiff(x,y)
-setdiff(y,x)
-x
-y
-attach(mtcars)
-gears <- factor(gears)#
-cyl <- factor(cyl)#
-interaction.plot(cyl, gear, mpg, type="b", col=c(1:3), #
-   leg.bty="o", leg.bg="beige", lwd=2, pch=c(18,24,22), #
-   xlab="Number of Cylinders", #
-   ylab="Mean Miles Per Gallon", #
-   main="Interaction Plot")
-gear <- factor(gear)
-interaction.plot(cyl, gear, mpg, type="b", col=c(1:3), #
-   leg.bty="o", leg.bg="beige", lwd=2, pch=c(18,24,22), #
-   xlab="Number of Cylinders", #
-   ylab="Mean Miles Per Gallon", #
-   main="Interaction Plot")
-?pair
-?pairs
-var2<- c("I","Love,"DeZyre")
-?lapply
-3/16
-9/64
-?mle
-install.packages("stats4")
-library(stats4)
 library(class)
 ?knn
 qnorm(0.01)
@@ -296,3 +265,44 @@ library(rsconnect)
 rsconnect::setAccountInfo(name='jadeyu', token='2E3890EF686FE7AC0DA99B04127EC7B4', secret='5hU4agOBPgFR/jySmAzK8s4I0dODcNMWKmIKz4Hf')
 deployApp()
 setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
+source("RTourest.R")
+state = "California"#
+city = "San Francisco"#
+nlist = 15#
+show_attractions(state, city, nlist)
+source("RTourest.R")
+state = "California"#
+city = "San Francisco"#
+nlist = 15#
+show_attractions(state, city, nlist)
+source("RTourest.R")
+state = "California"#
+city = "San Francisco"#
+nlist = 15#
+show_attractions(state, city, nlist)
+#number 8 in san francisco has \ in name#
+Aselection = '2, 4'#
+dining_pref = 'Chinese'#
+radius = 2000#
+show_restaurants(Aselection, dining_pref, radius)
+Rselection = '1'#
+start = "City Hall"#
+end = start#
+show_url(Rselection, start, end)
+setwd(paste(getwd(),"/..",sep=""))#
+library(shiny)#
+runApp("Tourest")
+setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
+library(rsconnect)
+rsconnect::setAccountInfo(name='jadeyu', token='2E3890EF686FE7AC0DA99B04127EC7B4', secret='5hU4agOBPgFR/jySmAzK8s4I0dODcNMWKmIKz4Hf')
+deployApp()
+setwd(paste(getwd(),"/..",sep=""))#
+library(shiny)#
+runApp("Tourest")
+rsconnect::setAccountInfo(name='jadeyu', token='E8E35094740D962BA62E2D18F6BDCBA4', secret='dO4bom4LwKYaKM5gMKeJ/yFDANGff30J1MZMfvxY')
+setwd("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
+deployApp()
+rsconnect::showLogs()
+deployApp()
+runGit("Tourest","JadeYu")
+runGitHub("Tourest","JadeYu")
