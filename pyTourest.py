@@ -1,10 +1,11 @@
-#yelp API related functions
-import sys
-sys.path.append("/Users/jadezhang/Documents/2016-2017_data_science/API_project/Tourest")
 import rauth
 import time
 
+################Yelp API related functions###########################
 def get_para_attractions(city,state,num):
+    """
+    Get a list of parameters for attraction searching using Yelp API.
+    """
     params = {}
     params["term"] = "Landmark"
     params["category_filter"] = "active,arts,religiousorgs,shopping"
@@ -14,9 +15,10 @@ def get_para_attractions(city,state,num):
     params["radius_filter"] = "5000"
     return params
 
-#Category can be Arts & Entertainment, Active Life, or Food
-
 def get_para_dining(lat,long,dining_pref,radius):
+    """
+    Get a list of parameters for restaurant searching using Yelp API.
+    """
     params = {}
     params["term"] = dining_pref
     params["category_filter"] = "restaurants"
@@ -26,20 +28,17 @@ def get_para_dining(lat,long,dining_pref,radius):
     params["sort"] = 2 
     return params
 
-def get_para_hotel(lat,long,hotel_pref,radius):
-    params = {}
-    params["term"] = hotel_pref
-    params["category_filter"] = "hotelstravel"
-    params["ll"] = "{},{}".format(str(lat),str(long))
-    params["radius_filter"] = str(radius)
-    params["limit"] = "8"
-    params["sort"] = 2 
-    return params
-
 def get_coord(coord):
+    """
+    Transform API returned coordinate information (dictionary) into a tuple (lat, long).
+    """
     return coord['latitude'], coord['longitude']
 
 def get_results(params):
+
+    """
+    Make a query on Yelp API with the specified parameters.
+    """
 
     consumer_key = "FHjUV_8ZnrKQ-WX22Bb1cw"
     consumer_secret = "MSAajBT2EPztDh5I-t9PVAhxnO4"
@@ -59,6 +58,9 @@ def get_results(params):
     return data
 
 def test_dining():
+    """
+    Test the functions that search for restaurants using the Yelp API.
+    """
     locations = [(39.98,-82.98),(42.24,-83.61),(41.33,-89.13)]
     api_calls = []
     for lat,long in locations:
@@ -71,6 +73,9 @@ def test_dining():
     return api_calls
 
 def test_attractions():
+    """
+    Test the functions that search for attractions using the Yelp API.
+    """
     inputs = [("San Francisco","Art & Entertainment"),("San Francisco","Active Life"),("San Francisco","Food")]
     api_calls = []
     for city,category in inputs:
@@ -81,13 +86,18 @@ def test_attractions():
         #rate-limit
         time.sleep(1.0)
     return api_calls
+###############################################################
 
-#google map API related functions
+##############Google map API related functions#################
 import googlemaps
 gmaps = googlemaps.Client(key='AIzaSyDR5O0GRTeZn9Y1vW3ypD3aaIBSlmmJht4')
 
-#determine optimized route 
+
 def optimize_route(start, end, waypoints):
+    """
+    Use the google map API to get an optimized route list given a starting point, an ending
+    point and waypoints to pass through.
+    """
     directions_result = gmaps.directions(start,
                                      end,
                                      waypoints = waypoints,
@@ -100,16 +110,18 @@ def optimize_route(start, end, waypoints):
     route.append(end)
     return route
 
-#create a url that shows the route in Google map.
+
 def make_url(route):
+    """
+    Given a route list containing all destinations in order, create a url that shows the route in Google map.
+    """
     base = "https://www.google.com/maps/dir/"
     stops = list(map(lambda x: '+'.join(x.split()), route))
     specifics = '/'.join(stops)
     return base + specifics
+#############################################################################
 
-#Functions that convert input to appropriate data types or transform outcomes
-#for better visualization.
-
+################Functions related to string manipulation#######################
 def str2nlist(string):
     """
     Convert a string like '1,2,15' to a list like [1,2,15].
@@ -158,7 +170,9 @@ def str2bool(string):
         return True
     else:
         return False
+##############################################################################
 
+#########Functions summarizing results returned from API calls################
 def list_attractions(city, state, nlist):
     """
     Given the name of the city and the number of items to show (nlist),
